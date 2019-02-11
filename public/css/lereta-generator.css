@@ -1,0 +1,148 @@
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+input:focus {
+  outline: none!important;
+}
+
+body {
+  font-family:"HelveticaNeue-Medium", Helvetica, Arial, sans-serif;
+  height: 100%;
+  min-height: 35rem;
+  position: relative;
+  font-weight: 300;
+  background: url('../img/background-image.jpg') #052833 no-repeat center center scroll;
+  background-position-y:0px;
+  max-width:1920px;
+  min-width:1290px;
+  margin:auto;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/HelveticaNeue-Black.otf') format('truetype');
+} 
+
+@font-face {
+  font-family:'HelveticaNeue-Medium';
+  font-style:normal;
+  font-weight:normal;
+  src: url('../fonts/HelveticaNeueMedium.ttf') format('truetype');
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight:500;
+}
+
+p {
+  font-size:1.25rem;
+  color:#b8dae6;
+}
+
+.overlay {
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width: 100%;
+  opacity:0.6;
+  z-index:1;
+}
+
+.file-field {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
+  z-index:2;
+  height:100%;
+}
+
+.file-field .file-field-bg {
+  position: absolute;
+  height:100%;
+  background-size:cover;
+}
+
+.content-wrapper {
+  padding-top:6.5%;
+}
+
+.file-field .file-field-content h1 {
+  font-size:2rem;
+  letter-spacing:1.6px;
+  padding-top:2.7rem;
+}
+
+label {
+  height:46px!important;
+  background-color:#fff;
+  overflow:hidden;
+  border-radius:0.3rem;
+  border:none;
+}
+
+span.choose-file-btn {
+  padding:10px 38px;
+  float:right;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #edf7fa;
+  color:#336c80;
+}
+
+label::after {
+  content:attr(data-content);
+  color:#909090;
+  vertical-align: -39%;
+}
+
+.custom-file-input {
+  position: relative;
+  z-index: 2;
+  width: 0;
+  padding: 0;
+  height: 0;
+  opacity: 0;
+}
+
+input[type="file"] {
+  -webkit-appearance:none;
+  text-align:left;
+  -webkit-rtl-ordering:left;
+}
+
+.form-control {
+  border-radius: 0.25rem;
+}
+
+.file-btn:hover {
+  background-color:#dbe8ec;
+  color:#336c80;
+}
+
+.file-btn:active {
+  background-color:#dbe8ec;
+  color:#336c80;
+}
+
+.convert-btn {
+  width:160px;
+  background-color:#6ba1b3;
+  color:#fff;
+  font-size:1.2rem;
+}
+
+.convert-btn:hover {
+    background-color:#5491a5;
+    color:#fff;
+}
+
+
+
+

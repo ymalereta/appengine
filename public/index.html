@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Lereta Report Files Generator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles-->
+    <link href="/css/lereta-generator.css" rel="stylesheet" />
+    
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+
+    <div class="file-field text-center">
+      <div class="file-field-bg align-middle"></div>
+      <div class="container h-100">
+        <div class="row form-group h-100">
+          <div class="col-9 mx-auto content-wrapper">
+            <div class="file-field-content text-white py-md-0">
+              <img class="pb-5 mb-4" src="/img/lereta_logo.png" width="168" />
+              <h1 class="mb-3 pb-2">P10P Report File Converter</h1>
+              <p class= "mb-5">Convert your TXT file into Excel Spreadsheet</p>
+              <div id="showFileName"></div>
+
+              <!-- choose file bar -->
+              <form class="pt-3" ref="uploadForm" id="uploadForm" method="post" action="/upload" enctype="multipart/form-data"> 
+                <label class="custom-file mt-3 m-auto text-left pl-4">
+                  <input type="file" name="txtFile" id="txtFile" title="Choose file" class="custom-file-input" onChange='getFileName()'/>           
+                  <span class="btn choose-file-btn float-right">
+                    <img class="pr-2" src="/img/svg/search-icon.svg" alt="search" />           
+                    Choose file</span>
+                  <span class="custom-file-control"></span>
+                </label>
+                
+                <div class="pt-5 mt-3">
+                  <button type="submit" class="btn convert-btn mx-auto">
+                    Convert File
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        let uploadFileContent = document.querySelector('label');
+        uploadFileContent.setAttribute('data-content', 'Please choose a TXT file to convert');
+
+        //after file uploaded change original text to file name
+        let fileFullPath = document.getElementById("txtFile");
+        let fileName = "";
+
+        getFileName = () =>
+        {
+          fileName = fileFullPath.value.replace(/^.*[\\\/]/, '');
+          uploadFileContent.setAttribute('data-content', fileName);
+        }                
+    </script>
+    
+  </body>
+</html>
